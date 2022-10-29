@@ -42,6 +42,8 @@ namespace Diary_algoritmy
 
         public void NextRecord()
         {
+            //todo 
+            
             if (DiaryNodes.Count != 0)
             {
                 CurrentNode = CurrentNode.Next;
@@ -59,7 +61,6 @@ namespace Diary_algoritmy
         {
                 Console.WriteLine($"Počet záznamů: {DiaryNodes.Count}");
         }
-
 
         public void WriteCurrentNode()
         {
