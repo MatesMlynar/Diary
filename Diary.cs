@@ -42,7 +42,7 @@ namespace Diary_algoritmy
 
         public void NextRecord()
         {
-            //todo 
+            //todo
             
             if (DiaryNodes.Count != 0)
             {
