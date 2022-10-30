@@ -17,7 +17,7 @@ namespace Diary_algoritmy
             
             if (!File.Exists(savePath))
             {
-                File.Create(savePath);
+                File.Create(savePath).Close();
             }
             
             
@@ -28,44 +28,27 @@ namespace Diary_algoritmy
             else
             {
                 var file = File.ReadAllText(savePath);
-                DiaryNodes = new LinkedList<string>(file.Substring(0,file.LastIndexOf('/')).Split('/'));
+                DiaryNodes = new LinkedList<string>(file.Split('/'));
                 CurrentNode = DiaryNodes.Last;
+                //Substring(0,file.LastIndexOf('/')).
             }
             Path = savePath;
         }
         
         
-        
         //methods
         public void NewRecord(string datum, string text)
         {
-            File.AppendAllText(Path, $"Datum: {datum} \nText: {text} /\n");
             DiaryNodes.AddLast($"Datum: {datum} \nText: {text} \n");
             CurrentNode = DiaryNodes.Last;
+            SaveFile();
         }
 
         public void DeleteRecord()
         {
-            var linesToKeep = File.ReadAllLines(Path).Where(text => text != CurrentNode.Value + " /");
-
-            foreach (var line in linesToKeep)
-            {
-                File.WriteAllText(Path, line);
-            }
-            
-            Console.Clear();
-            WriteCurrentNode();
-            Console.WriteLine("Pro odstranění tohoto záznamu stiskni 'enter', pro zrušení jiný znak.");
-            if (Console.ReadKey().Key == ConsoleKey.Enter)
-            {
-                DiaryNodes.Remove(CurrentNode);
-            }
-            else
-            {
-                return;
-            }
-
+            DiaryNodes.Remove(CurrentNode);
             CurrentNode = DiaryNodes.First;
+            SaveFile();
         }
         
         
@@ -112,7 +95,11 @@ namespace Diary_algoritmy
             BasicCommands.WriteDash();
             Console.WriteLine("");
         }
-        
+
+        private void SaveFile()
+        {
+            File.WriteAllText(Path, String.Join("/ ", DiaryNodes));
+        }
         
 
     }

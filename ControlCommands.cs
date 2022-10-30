@@ -46,6 +46,18 @@ namespace Diary_algoritmy
                     break;
                 
                 case "smaz":
+                    Console.Clear();
+                    diar.WriteCurrentNode();
+                    Console.WriteLine("Pro odstranění tohoto záznamu stiskni 'enter', pro zrušení jiný znak.");
+                    if (Console.ReadKey().Key == ConsoleKey.Enter)
+                    {
+                        diar.DeleteRecord();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Zrušeno!");
+                    }
+                    
                     diar.DeleteRecord();
                     break;
                 
