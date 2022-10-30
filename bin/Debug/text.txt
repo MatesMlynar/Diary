@@ -1,6 +1,1 @@
-Datum: 01.01.2001 0:00:00 
-Text: test1 /
-Datum: 02.01.2001 0:00:00 
-Text: test2 /
-Datum: 20.05.2005 0:00:00 
-Text: test3 /
+Text: test3  /

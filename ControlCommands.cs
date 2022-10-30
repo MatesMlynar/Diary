@@ -34,13 +34,11 @@ namespace Diary_algoritmy
             switch(command)
             {
                 case "predchozi":
-
                     diar.PreviousRecord();
                     break;
                 
                 case "dalsi":
                     diar.NextRecord();
-                    
                     break;
                 
                 case "novy":
@@ -48,12 +46,14 @@ namespace Diary_algoritmy
                     break;
                 
                 case "smaz":
-
-
+                    diar.DeleteRecord();
                     break;
                 
                 case "zavri":
                     
+                    break;
+                default:
+                    Console.WriteLine("Zadali jste špatný příkaz, zkuste to znovu");
                     break;
             }
 

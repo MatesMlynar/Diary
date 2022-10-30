@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace Diary_algoritmy
 {
@@ -37,11 +39,36 @@ namespace Diary_algoritmy
         //methods
         public void NewRecord(string datum, string text)
         {
-            File.AppendAllText(Path, $"Datum: {datum} \nText: {text}/\n");
-            DiaryNodes.AddLast($"Datum: {datum} \nText: {text}\n");
+            File.AppendAllText(Path, $"Datum: {datum} \nText: {text} /\n");
+            DiaryNodes.AddLast($"Datum: {datum} \nText: {text} \n");
             CurrentNode = DiaryNodes.Last;
         }
 
+        public void DeleteRecord()
+        {
+            var linesToKeep = File.ReadAllLines(Path).Where(text => text != CurrentNode.Value + " /");
+
+            foreach (var line in linesToKeep)
+            {
+                File.WriteAllText(Path, line);
+            }
+            
+            Console.Clear();
+            WriteCurrentNode();
+            Console.WriteLine("Pro odstranění tohoto záznamu stiskni 'enter', pro zrušení jiný znak.");
+            if (Console.ReadKey().Key == ConsoleKey.Enter)
+            {
+                DiaryNodes.Remove(CurrentNode);
+            }
+            else
+            {
+                return;
+            }
+
+            CurrentNode = DiaryNodes.First;
+        }
+        
+        
         public void NextRecord()
         {
             if (CurrentNode.Next != null)
@@ -85,6 +112,8 @@ namespace Diary_algoritmy
             BasicCommands.WriteDash();
             Console.WriteLine("");
         }
+        
+        
 
     }
     
