@@ -17,19 +17,13 @@ namespace Diary_algoritmy
                 diar.CountOfNodes();
                 Console.WriteLine();
                 
-                if (isReady)
+                if (isReady && diar.DiaryNodes.Count != 0)
                 {
                     diar.WriteCurrentNode();
                 }
                 
                 HandleCommand(BasicCommands.TypeCommand(),diar, out isReady);
                 
-                
-                /*if (BasicCommands.TypeCommand() == "ukonci")
-                {
-                    Console.WriteLine("Deník zavřen!");
-                    break;
-                }*/
                 
             }
         }
@@ -41,7 +35,7 @@ namespace Diary_algoritmy
             {
                 case "predchozi":
 
-                    //do something
+                    diar.PreviousRecord();
                     break;
                 
                 case "dalsi":

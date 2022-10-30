@@ -1,4 +1,6 @@
-Datum: 01.01.2005 0:00:00 
-Text: asdasda /
-Datum: 02.05.1296 0:00:00 
-Text: ahoj, dneska se mám fakt dobře, daří se mi i s tímto projektem, zatím. /
+Datum: 01.01.2001 0:00:00 
+Text: test1 /
+Datum: 02.01.2001 0:00:00 
+Text: test2 /
+Datum: 20.05.2005 0:00:00 
+Text: test3 /

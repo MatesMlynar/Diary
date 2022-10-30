@@ -8,7 +8,7 @@ namespace Diary_algoritmy
     {
         public static string Path = "";
         public LinkedList<string> DiaryNodes;
-        public LinkedListNode<string> CurrentNode = null;
+        public LinkedListNode<string> CurrentNode;
 
         public Diary(string savePath)
         {
@@ -27,6 +27,7 @@ namespace Diary_algoritmy
             {
                 var file = File.ReadAllText(savePath);
                 DiaryNodes = new LinkedList<string>(file.Substring(0,file.LastIndexOf('/')).Split('/'));
+                CurrentNode = DiaryNodes.Last;
             }
             Path = savePath;
         }
@@ -38,24 +39,40 @@ namespace Diary_algoritmy
         {
             File.AppendAllText(Path, $"Datum: {datum} \nText: {text}/\n");
             DiaryNodes.AddLast($"Datum: {datum} \nText: {text}\n");
+            CurrentNode = DiaryNodes.Last;
         }
 
         public void NextRecord()
         {
-            //todo
-            
-            if (DiaryNodes.Count != 0)
+            if (CurrentNode.Next != null)
             {
                 CurrentNode = CurrentNode.Next;
+            }
+            else if (CurrentNode == DiaryNodes.Last)
+            {
+                CurrentNode = DiaryNodes.First;
             }
             else
             {
                 CurrentNode = DiaryNodes.Last;
             }
-
         }
-        
-        
+
+        public void PreviousRecord()
+        {
+            if (CurrentNode.Previous != null)
+            {
+                CurrentNode = CurrentNode.Previous;
+            }
+            else if (CurrentNode == DiaryNodes.First)
+            {
+                CurrentNode = DiaryNodes.Last;
+            }
+            else
+            {
+                CurrentNode = DiaryNodes.First;
+            }
+        }
         
         public void CountOfNodes()
         {
