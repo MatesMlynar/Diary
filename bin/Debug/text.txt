@@ -1,0 +1,4 @@
+Datum: 01.01.1001 0:00:00 
+Text: test1  
+/Datum: 05.06.2025 0:00:00 
+Text: stanu se milionářem <33  

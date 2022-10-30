@@ -96,9 +96,9 @@ namespace Diary_algoritmy
             Console.WriteLine("");
         }
 
-        private void SaveFile()
+        public void SaveFile()
         {
-            File.WriteAllText(Path, String.Join("/ ", DiaryNodes));
+            File.WriteAllText(Path, String.Join("/", DiaryNodes));
         }
         
 

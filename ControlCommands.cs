@@ -57,12 +57,11 @@ namespace Diary_algoritmy
                     {
                         Console.WriteLine("Zrušeno!");
                     }
-                    
-                    diar.DeleteRecord();
                     break;
                 
                 case "zavri":
-                    
+                    diar.SaveFile();
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Zadali jste špatný příkaz, zkuste to znovu");

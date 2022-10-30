@@ -1,7 +1,7 @@
+C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\bin\Debug\Diary_algoritmy.exe
+C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\bin\Debug\Diary_algoritmy.pdb
 C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\obj\Debug\Diary_algoritmy.csproj.AssemblyReference.cache
 C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\obj\Debug\Diary_algoritmy.csproj.SuggestedBindingRedirects.cache
 C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\obj\Debug\Diary_algoritmy.csproj.CoreCompileInputs.cache
-C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\bin\Debug\Diary_algoritmy.exe
-C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\bin\Debug\Diary_algoritmy.pdb
 C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\obj\Debug\Diary_algoritmy.exe
 C:\Users\Mlynář Matěj\Desktop\Škola\Algoritmy\Diary_algoritmy\Diary_algoritmy\obj\Debug\Diary_algoritmy.pdb
